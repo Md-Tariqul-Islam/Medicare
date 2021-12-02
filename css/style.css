@@ -33,11 +33,11 @@ h1,h2,h3,h4,h5,h6 {
     color: #f1428b;
   }
 
-  .navbar-default .navbar-nav li.appointment-btn {
+  .navbar-default .navbar-nav .appointment-btn {
     margin: 3px 0 0 20px;
   }
 
-  .navbar-default .navbar-nav li.appointment-btn a {
+  .navbar-default .navbar-nav .appointment-btn a {
     background: #f1428b;
     border-radius: 3px;
     color: #ffffff;
@@ -46,7 +46,7 @@ h1,h2,h3,h4,h5,h6 {
     padding-bottom: 12px;
   }
 
-  .navbar-default .navbar-nav li.appointment-btn a:hover {
+  .navbar-default .navbar-nav .appointment-btn a:hover {
     background: #bb2c33;
     color: #ffffff !important;
   }
