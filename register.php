@@ -36,23 +36,24 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome!!</h1>
                                 </div>
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="user">
+                                <form action="" method="post" class="user">
                                     <div class="form-group">
-                                        <input type="email" name="lemail" class="form-control form-control-user"
+                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="lpass" class="form-control form-control-user"
+                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="lpass" class="form-control form-control-user"
+                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill"
                                             id="exampleInputPassword" placeholder="Confirm Password">
                                     </div>
-                                    <button type="submit" name="logbtn" class="btn btncustom btn-user btn-block">
-                                        Sign-in
-                                    </button>
+                                    
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary rounded-pill" type="button">Sign-in</button>
+                                    </div>
                                     
                                 </form>
                                 <hr>
