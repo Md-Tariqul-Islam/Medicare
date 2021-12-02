@@ -29,35 +29,42 @@ echo "Tariq and Akram";
 
     <span> <a href="login.php">Sign-In</a></span>
 
-    <!-- MENU -->
-    <section class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
+    
 
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                    <span class="icon icon-bar"></span>
-                </button>
-
-                <!-- lOGO TEXT HERE -->
-                <a href="index.html" class="navbar-brand"><i class="fa fa-plus-square"></i>Medicare</a>
+    <header class="header-section">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <i class="fa fa-plus-square"></i>Medicare
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Doctors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <button class="btn btn-primary" type="submit">Make a appointment</button>
+              </form>
             </div>
-
-            <!-- MENU LINKS -->
-            <div class="collapse navbar-collapse custnav">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#top" class="smoothScroll">Home</a></li>
-                    <li><a href="#about" class="smoothScroll">About Us</a></li>
-                    <li><a href="#team" class="smoothScroll">Doctors</a></li>
-                    <li><a href="#news" class="smoothScroll">News</a></li>
-                    <li><a href="#google-map" class="smoothScroll">Contact</a></li>
-                    <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
+          </div>
+        </nav>
+    </header>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
