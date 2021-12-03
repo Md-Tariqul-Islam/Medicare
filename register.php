@@ -13,14 +13,7 @@
   </head>
   <body>
 
-
-    <h1>Register Page</h1>
-
-
-   
-
-
-    <div class="container">
+    <div class="container pt-5">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -34,31 +27,39 @@
                         <div class="col-lg-12 ">
                             <div class="p-5 lpage">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome!!</h1>
+                                    <h1 class="h4 text-gray-900 mb-3">Welcome!!</h1>
                                 </div>
                                 <form action="" method="post" class="user">
-                                    <div class="form-group">
-                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill"
+
+                                    <div class="form-group m-4">
+                                        <input type="text" name="lpass" class="form-control form-control-user rounded-pill p-3"
+                                            id="exampleInputPassword" placeholder="Enter Username...">
+                                    </div>
+
+                                    <div class="form-group m-4">
+                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-3"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill"
+
+                                    <div class="form-group m-4">
+                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill"
+
+                                    <div class="form-group m-4">
+                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
                                             id="exampleInputPassword" placeholder="Confirm Password">
                                     </div>
                                     
-                                    <div class="d-grid">
-                                        <button class="btn btn-primary rounded-pill" type="button">Sign-in</button>
+                                    <div class="d-grid m-4">
+                                        <button class="btn btn-primary rounded-pill" type="submit">Sign-in</button>
                                     </div>
                                     
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="index.php">Back to Home</a>
+                                    <a class="text-decoration-none" href="index.php">Back to Home</a>
                                 </div>
                             </div>
                         </div>

@@ -1,9 +1,3 @@
-<?php 
-
-echo "hello";
-echo "Tariq and Akram";
-?>
-
 
 <!doctype html>
 <html lang="en">

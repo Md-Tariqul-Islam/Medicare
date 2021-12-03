@@ -15,10 +15,7 @@
   <body>
 
 
-    <h1>Log-In Page</h1>
-
-
-    <div class="container">
+    <div class="container mt-5">
 
 <!-- Outer Row -->
 <div class="row justify-content-center">
@@ -35,25 +32,25 @@
                                 <h1 class="h4 text-gray-900 mb-4">Welcome!!</h1>
                             </div>
                             <form action="" method="post" class="user">
-                                <div class="form-group">
-                                    <input type="email" name="lemail" class="form-control form-control-user rounded-pill"
+                                <div class="form-group m-4">
+                                    <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-3"
                                         id="exampleInputEmail" aria-describedby="emailHelp"
                                         placeholder="Enter Email Address...">
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" name="lpass" class="form-control form-control-user rounded-pill"
+
+                                <div class="form-group m-4">
+                                    <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
                                         id="exampleInputPassword" placeholder="Password">
                                 </div>
                                 
-                                
-                                <div class="d-grid">
-                                    <button class="btn btn-primary rounded-pill" type="button">Sign-in</button>
+                                <div class="d-grid m-4">
+                                    <button class="btn btn-primary rounded-pill" type="submit">Sign-in</button>
                                 </div>
                                 
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="index.php">Back to Home</a>
+                                <a class="text-decoration-none" href="index.php">Back to Home</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +64,7 @@
 
 </div>
  <div class="text-center">
-    <p>Don't have an account? <a href="register.php">Register Here</a>.</p>
+    <p>Don't have an account? <a href="register.php" class="text-decoration-none fw-bold">Register Here</a>.</p>
  </div>
     
 
