@@ -1,3 +1,40 @@
+
+<?php
+
+    
+    $error=null;
+    if(isset($_POST['logbtn'])){
+        $email= $_POST['lemail'];
+        $pass=md5($_POST['lpass']);
+        include "dbconnect.php";
+        $sql="SELECT * FROM myadmin WHERE email='$email' AND pass='$pass'";
+        $result=mysqli_query($link,$sql);
+        $checkresult=mysqli_num_rows($result);
+        if($checkresult>0){
+            while($row=mysqli_fetch_assoc($result)){
+                echo ($row['name']);
+            }
+        }
+        else{
+            $error="Invalid email or password!";
+            echo $error;
+        }
+
+        
+    }
+    
+    
+
+?>
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,7 +81,7 @@
                                 </div>
                                 
                                 <div class="d-grid m-4">
-                                    <button class="btn btn-primary rounded-pill" type="submit">Sign-in</button>
+                                  <button class="btn btn-primary rounded-pill" name="logbtn" type="submit">Sign-in</button>
                                 </div>
                                 
                             </form>
