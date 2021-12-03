@@ -1,3 +1,28 @@
+
+<?php 
+ include "dbconnect.php";
+
+ if(isset($_POST['logbtn'])){
+    $name= $_POST['lName'];
+    $email= $_POST['lemail'];
+    $pass=md5($_POST['lpass']);
+    $pass1=md5($_POST['lpass1']);
+
+    $sql = "INSERT INTO myadmin (name,email,pass,pass1) VALUES ('$name','$email','$pass','$pass1')";
+    if(mysqli_query($link,$sql)){
+       
+    }
+    else{
+        echo "Error : Could not able to execute" . mysqli_error($link);
+    }
+   mysqli_close($link);
+ }
+ 
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,10 +54,10 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-3">Welcome!!</h1>
                                 </div>
-                                <form action="" method="post" class="user">
+                                <form action="register.php" method="post" class="user">
 
                                     <div class="form-group m-4">
-                                        <input type="text" name="lpass" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="text" name="lName" class="form-control form-control-user rounded-pill p-3"
                                             id="exampleInputPassword" placeholder="Enter Username...">
                                     </div>
 
@@ -48,12 +73,12 @@
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-3"
                                             id="exampleInputPassword" placeholder="Confirm Password">
                                     </div>
                                     
                                     <div class="d-grid m-4">
-                                        <button class="btn btn-primary rounded-pill" type="submit">Sign-in</button>
+                                        <button class="btn btn-primary rounded-pill" name="logbtn" type="submit">Sign-in</button>
                                     </div>
                                     
                                 </form>
