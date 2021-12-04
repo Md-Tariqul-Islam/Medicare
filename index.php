@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <title>MediCare</title>
+
+    <!-- Owl-Carousel CSS  -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
   </head>
   <body>
 
@@ -24,7 +28,7 @@
     <span> <a href="login.php">Sign-In</a></span>
 
     
-
+    <!-- header-section start -->
     <header class="header-section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container">
@@ -59,8 +63,70 @@
           </div>
         </nav>
     </header>
+    <!-- header-section end -->
+
+    <!-- home start -->
+    <section id="home" class="slider" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item item-first">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Let's make your life happier & healthier</h3>
+                                <h1>Healthy & Secured Life</h1>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item item-second">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Let's make your life happier & healthier</h3>
+                                <h1>Perfect Lifestyle</h1>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item item-third">
+                        <div class="caption">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h3>Let's make your life happier & healthier</h3>
+                                <h1>Your Health Necessities</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- home end -->
+
+    
+
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script>
+      $('.owl-carousel').owlCarousel({
+      animateOut: 'fadeOut',
+      items:1,
+      loop:true,
+      autoplay:true,
+    })
+    </script>
+
+    
+    
   </body>
 </html>
