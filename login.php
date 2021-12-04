@@ -1,7 +1,6 @@
 
 <?php
-
-    
+   
     $error=null;
     if(isset($_POST['logbtn'])){
         $email= $_POST['lemail'];
@@ -17,7 +16,6 @@
         }
         else{
             $error="Invalid email or password!";
-            echo $error;
         }
 
         
@@ -85,6 +83,21 @@
                                 </div>
                                 
                             </form>
+
+
+                              <?php 
+
+                                if($error!=null){
+                                    echo "<div class='alert alert-danger mx-4 p-2' role='alert'>
+                                    $error                                
+                                    </div>";
+                                }
+
+                                
+
+                              
+                              ?>
+
                             <hr>
                             <div class="text-center">
                                 <a class="text-decoration-none" href="index.php">Back to Home</a>
