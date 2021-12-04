@@ -125,8 +125,6 @@
       autoplay:true,
     })
     </script>
-
-    
     
   </body>
 </html>
