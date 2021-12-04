@@ -1,24 +1,48 @@
-
 <?php 
- include "dbconnect.php";
 
- if(isset($_POST['logbtn'])){
-    $name= $_POST['lName'];
-    $email= $_POST['lemail'];
-    $pass=md5($_POST['lpass']);
-    $pass1=md5($_POST['lpass1']);
+    if(isset($_POST['logbtn'])){
+        $error=null;
+        $error1=null;
+        include "dbconnect.php";
+        $name= $_POST['lName'];
+        $email= $_POST['lemail'];
+        $pass=md5($_POST['lpass']);
+        $pass1=md5($_POST['lpass1']);
 
-    $sql = "INSERT INTO myadmin (name,email,pass,pass1) VALUES ('$name','$email','$pass','$pass1')";
-    if(mysqli_query($link,$sql)){
-       
+        $emailquery="SELECT * FROM myadmin WHERE email='$email'";
+        $query=mysqli_query($link,$emailquery);
+        $emailcount=mysqli_num_rows($query);
+
+        if($emailcount>0){
+            $error="* Email already exist";
+        }else{
+            if($pass===$pass1){
+                $sql = "INSERT INTO myadmin (name,email,pass,pass1) VALUES ('$name','$email','$pass','$pass1')";
+                if(mysqli_query($link,$sql)){
+                    ?>
+                    <script>
+                        alert("Recorded Successfully");
+                    </script>
+                    <?php
+                }
+                else{
+                    //echo "Error : Could not able to execute" . mysqli_error($link);
+                    ?>
+                    <script>
+                        alert("Recorded is not added Successfully");
+                    </script>
+                    <?php
+                }
+                mysqli_close($link);
+            }
+            else{
+                $error1="* Password Is Not Match"; 
+                //echo $error1;
+            }
+        }
     }
-    else{
-        echo "Error : Could not able to execute" . mysqli_error($link);
-    }
-   mysqli_close($link);
- }
- 
 ?>
+
 
 
 
@@ -38,7 +62,7 @@
   </head>
   <body>
 
-    <div class="container pt-5">
+    <div class="container pt-4">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -57,24 +81,30 @@
                                 <form action="register.php" method="post" class="user">
 
                                     <div class="form-group m-4">
-                                        <input type="text" name="lName" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="text" name="lName" class="form-control form-control-user rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Enter Username...">
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-2"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
+                                            <?php 
+                                              echo "<p class='text-danger mx-3'>$error</p>";
+                                            ?>
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-3"
+                                        <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Confirm Password">
+                                            <?php 
+                                              echo "<p class='text-danger mx-3'>$error1</p>";
+                                            ?>
                                     </div>
                                     
                                     <div class="d-grid m-4">
@@ -101,3 +131,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+
+
