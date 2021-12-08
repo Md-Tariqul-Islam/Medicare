@@ -1,8 +1,7 @@
 <?php 
-
+    $error=null;
+    $error1=null;
     if(isset($_POST['logbtn'])){
-        $error=null;
-        $error1=null;
         include "dbconnect.php";
         $name= $_POST['lName'];
         $email= $_POST['lemail'];
@@ -26,7 +25,6 @@
                     <?php
                 }
                 else{
-                    //echo "Error : Could not able to execute" . mysqli_error($link);
                     ?>
                     <script>
                         alert("Recorded is not added Successfully");
@@ -37,15 +35,10 @@
             }
             else{
                 $error1="* Password Is Not Match"; 
-                //echo $error1;
             }
         }
     }
 ?>
-
-
-
-
 
 <!doctype html>
 <html lang="en">
@@ -90,7 +83,9 @@
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address...">
                                             <?php 
-                                              echo "<p class='text-danger mx-3'>$error</p>";
+                                              if($error!=null){
+                                                echo "<p class='text-danger mx-3'>$error</p>";
+                                              }
                                             ?>
                                     </div>
 
@@ -103,7 +98,9 @@
                                         <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Confirm Password">
                                             <?php 
-                                              echo "<p class='text-danger mx-3'>$error1</p>";
+                                              if($error1!=null){
+                                                echo "<p class='text-danger mx-3'>$error1</p>";
+                                              }
                                             ?>
                                     </div>
                                     
