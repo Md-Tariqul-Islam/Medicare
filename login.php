@@ -1,6 +1,6 @@
 
 <?php
-   
+    session_start();
     $error=null;
     if(isset($_POST['logbtn'])){
         $email= $_POST['lemail'];
@@ -11,8 +11,12 @@
         $checkresult=mysqli_num_rows($result);
         if($checkresult>0){
             while($row=mysqli_fetch_assoc($result)){
-                echo ($row['name']);
+                $name=$row['name'];
+                // echo ($row['name']);
+                // echo $name;
             }
+            $_SESSION['name']=$name;
+            header("location:admin.php");
         }
         else{
             $error="Invalid email or password!";
@@ -65,12 +69,12 @@
                                 <div class="form-group m-4">
                                     <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-3"
                                         id="exampleInputEmail" aria-describedby="emailHelp"
-                                        placeholder="Enter Email Address...">
+                                        placeholder="Enter Email Address..." required>
                                 </div>
 
                                 <div class="form-group m-4">
                                     <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
-                                        id="exampleInputPassword" placeholder="Password">
+                                        id="exampleInputPassword" placeholder="Password" required>
                                 </div>
                                 
                                 <div class="d-grid m-4">

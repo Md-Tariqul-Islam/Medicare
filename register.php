@@ -75,13 +75,13 @@
 
                                     <div class="form-group m-4">
                                         <input type="text" name="lName" class="form-control form-control-user rounded-pill p-2"
-                                            id="exampleInputPassword" placeholder="Enter Username...">
+                                            id="exampleInputPassword" placeholder="Enter Username..." required>
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-2"
+                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-2 "
                                             id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address...">
+                                            placeholder="Enter Email Address..." required>
                                             <?php 
                                               if($error!=null){
                                                 echo "<p class='text-danger mx-3'>$error</p>";
@@ -91,12 +91,12 @@
 
                                     <div class="form-group m-4">
                                         <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-2"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="Password" required>
                                     </div>
 
                                     <div class="form-group m-4">
                                         <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-2"
-                                            id="exampleInputPassword" placeholder="Confirm Password">
+                                            id="exampleInputPassword" placeholder="Confirm Password" required>
                                             <?php 
                                               if($error1!=null){
                                                 echo "<p class='text-danger mx-3'>$error1</p>";
