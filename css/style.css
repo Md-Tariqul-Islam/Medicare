@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6 {
     line-height: inherit;
     
   }
-a, a:hover{
+a,a:hover{
       text-decoration: none;
   }
 
@@ -52,4 +52,15 @@ a, a:hover{
   background: transparent;
 	color: #008ed6;
 	border: 1px solid #008ed6;
+}
+
+
+header span.email-icon {
+  padding-top: 0;
+  color:aquamarine;
+  border: 2px solid red;
+}
+
+header p{
+  text-transform : uppercase;
 }
