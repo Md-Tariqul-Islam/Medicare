@@ -1,66 +1,25 @@
+
 *{
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-body {
-    background: #ffffff;
-    overflow-x: hidden;
-  }
-h1,h2,h3,h4,h5,h6 {
-    font-weight: 600;
-    line-height: inherit;
-    
-  }
-a,a:hover{
-      text-decoration: none;
-  }
+span a{
+  color: #252525;
+  text-decoration: none;
+}
+span a:hover{
+  color: #f14242;
+}
+span i{
+  color: #f1428b;
+  margin-right: 5px;
+}
 
-.header-section{
-	width: 100%;
-  padding: 10px 0px;
-  border: 1px solid black;
-}
-.header-section .navbar-brand{
-    color: #000;
-}
-.header-section .navbar-brand .fa{
-    color: #008ed6;
-}
-.header-section .bg-light{
-	background: transparent !important;
-}
-.header-section .navbar-light .navbar-nav .nav-link {
-    color: black;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0px 0px 0px 15px;
-}
-.header-section .navbar-light .navbar-nav .nav-link:hover {
-	color: #008ed6;
-}
-.header-section .navbar-light .btn-primary {
-	background: #008ed6;
-	color: #fff;
-	border: 1px solid #008ed6;
-	font-size: 14px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-  margin: 0px 0px 0px 20px;
-}
-.header-section .navbar-light .btn-primary:hover{
-  background: transparent;
-	color: #008ed6;
-	border: 1px solid #008ed6;
+header span.icon {
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  padding-right: 19px;
+  padding-left: 19px;
 }
 
 
-header span.email-icon {
-  padding-top: 0;
-  color:aquamarine;
-  border: 2px solid red;
-}
-
-header p{
-  text-transform : uppercase;
-}
