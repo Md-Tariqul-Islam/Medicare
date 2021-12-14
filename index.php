@@ -22,7 +22,7 @@
      <!-- Header -->
      <header>
         <div class="container pt-3">
-            <div class="row ">
+            <div class="row">
 
                 <div class="col text-center">
                     <p class="text-nowrap">Welcome to a Professional Health Care Center</p>
@@ -40,87 +40,87 @@
 
 
      <!--Menu-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-3">
-          <div class="container">
-            <!-- Text Logo && Icon -->
-            <a class="navbar-brand ps-5" href="index.php">
-              <i class="fas fa-plus-square"></i>Medicare
-            </a>
-            <!-- NavCollapse Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColl">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColl">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">About us</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">Doctors</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">News</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item px-2 pe-5">
-                  <a class="nav-link" href="#" id="appointment">Make an appointment</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    
-    <!-- header-section end -->
-
-    <!-- home start  -->
-    <section class="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info shadow sticky-top py-3">
       <div class="container">
+        <!-- Text Logo && Icon -->
+        <a class="navbar-brand ps-5" href="index.php">
+          <i class="fas fa-plus-square"></i>Medicare
+        </a>
+        <!-- NavCollapse Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColl">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColl">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#">Doctors</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item px-2 pe-5">
+              <a class="nav-link" href="#" id="appointment">Make an appointment</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    
+
+    <!-- Carousel  -->
+    <section class="home">
+
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/s1.jpg" class="d-block w-100" alt="...">
-      <div class="inner-text">
-        <h3>Let's make your life happier & healthier</h3>
-        <h1>Healthy & Secured Life.</h1>
+
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+          </div>
+
+          <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <img src="images/s1.jpg" class="d-block w-100" alt="...">
+                <div class="inner-text">
+                  <h3>LET'S MAKE YOUR LIFE HAPPIER & HEALTHIER</h3>
+                  <h1>Healthy & Secured Life</h1>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="images/s2.jpg" class="d-block w-100" alt="...">
+                <div class="inner-text">
+                  <h3>LET'S MAKE YOUR LIFE HAPPIER & HEALTHIER</h3>
+                  <h1>Perfect Lifestyle</h1>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="images/s3.jpg" class="d-block w-100" alt="...">
+                <div class="inner-text">
+                  <h3>LET'S MAKE YOUR LIFE HAPPIER & HEALTHIER</h3>
+                  <h1>Your Health Necessities</h1>
+                </div>
+              </div>
+
+          </div>
+
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/s2.jpg" class="d-block w-100" alt="...">
-      <div class="inner-text">
-        <h3>Let's make your life happier & healthier</h3>
-        <h1>Perfect Lifestyle</h1>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/s3.jpg" class="d-block w-100" alt="...">
-      <div class="inner-text">
-        <h3>Let's make your life happier & healthier</h3>
-        <h1>Your Health Necessities</h1>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-      </div>
+
     </section>
+
     <!-- home end  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
