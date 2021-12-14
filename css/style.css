@@ -22,4 +22,40 @@ header span.icon {
   padding-left: 19px;
 }
 
+.fa-plus-square{
+  color: #f1428b;
+}
+.d-flex .btn-primary{
+  background: #f1428b;
+}
+.d-flex .btn-primary:hover, .d-flex .btn-primary:focus{
+  color: #252525;
+  background-color: transparent;
+}
+
+
+.home{
+  width: 100%;
+}
+.inner-text{
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 33%;
+    color: #fff;
+}
+.inner-text h3{
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.inner-text h1{
+  font-size: 68px;
+  line-height: 78px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
