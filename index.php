@@ -39,40 +39,43 @@
     </header>
 
 
-    <section class="header-section">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-3">
           <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <!-- Text Logo && Icon -->
+            <a class="navbar-brand ps-5" href="index.php">
               <i class="fas fa-plus-square"></i>Medicare
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- NavCollapse Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColl">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="collapse navbar-collapse" id="navbarColl">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <li class="nav-item px-2">
+                  <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-2">
                   <a class="nav-link" href="#">About us</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-2">
                   <a class="nav-link" href="#">Doctors</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-2">
                   <a class="nav-link" href="#">News</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item px-2">
                   <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item px-2 pe-5">
+                  <a class="nav-link" href="#" id="appointment">Make an appointment</a>
+                </li>
               </ul>
-              <form class="d-flex">
-                <button class="btn btn-primary" type="submit">Make a appointment</button>
-              </form>
             </div>
           </div>
         </nav>
-    </section>
+    
     <!-- header-section end -->
 
     <!-- home start  -->

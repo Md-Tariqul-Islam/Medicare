@@ -25,14 +25,21 @@ header span.icon {
 .fa-plus-square{
   color: #f1428b;
 }
-.d-flex .btn-primary{
-  background: #f1428b;
-}
-.d-flex .btn-primary:hover, .d-flex .btn-primary:focus{
-  color: #252525;
-  background-color: transparent;
+
+#navbarColl li a{
+  color: black;
 }
 
+#navbarColl li a:hover{
+  color: #f14242;
+  font-weight: 600;
+}
+
+#appointment{
+  background: #f1428b;
+  border-radius: 3px;
+  color: #ffffff !important;
+}
 
 .home{
   width: 100%;
