@@ -69,7 +69,7 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item px-2 pe-5">
-              <a class="nav-link" href="#" id="appointment">Make an appointment</a>
+              <a class="nav-link" href="#" id="make-appoint">Make an appointment</a>
             </li>
           </ul>
         </div>
@@ -120,8 +120,89 @@
       </div>
 
     </section>
-
     <!-- home end  -->
+
+    <!-- Make an appointment start  -->
+    <section id="appointment" data-stellar-background-ratio="3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6 appimage">
+                    <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <!-- CONTACT FORM HERE -->
+                    <form id="appointment-form" role="form" method="post" action="">
+
+                        <!-- SECTION TITLE -->
+                        <div class="section-title">
+                            <h2>Make an appointment</h2>
+                        </div>
+
+                        <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
+                                    required>
+                             </div>
+
+                             <div class="col-md-6 col-sm-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Your Email" required>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="date">Select Date</label>
+                                <input type="date" name="date" value="" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="select">Select Department</label>
+                                <select class="form-control" name="department">
+                                    <option value="General Health">General Health</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Neurology">Neurology</option>
+                                    <option value="Orthopaedics">Orthopaedics</option>
+                                    <option value="Dental">Dental</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <label for="select">Choose Doctor</label>
+                                <select class="form-control" name="cdoctor">
+                                    <option value="Dr. Timmothy Johnson, Cardiology">Dr. Tariqul Islam, Cardiology
+                                    </option>
+                                    <option value="Dr. Amanda Rusco, Neurology">Dr. Akram Hossain, Neurology</option>
+                                    <option value="Dr. Akram Hossain, Dental">Dr.  Tariqul Islam, Dental</option>
+                                    <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label for="telephone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"
+                                    required>
+                                <label for="Message">Additional Message</label>
+                                <textarea class="form-control" rows="5" id="message" name="message"
+                                    placeholder="Message" required></textarea>
+                                <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
+                                </button>
+                                
+                            </div>
+                        </div>
+
+                            
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- appointment end -->
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
