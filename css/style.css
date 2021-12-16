@@ -113,3 +113,26 @@ header span.icon {
   background: #bb2c33;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 767px) {
+  #appointment .section-title h2{
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 500;
+  }
+  
+
+  .appimage{
+    text-align: center;
+  }
+  .appimage img{
+    display: inline;
+  }
+
+  #appointment-form {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  
+  
+}
