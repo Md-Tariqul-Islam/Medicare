@@ -24,9 +24,45 @@ echo "Welcome," . $_SESSION['name'];
 
   </head>
   <body>
+  
+    <div class="card-body">
+        <h1 class="card-title">Add doctor</h1>
+        <form action="" method="post">
 
+            <div class="m-4">
+                <label for="image">Image Path</label>
+                <input type="text" class="form-control" id="image" name="dbimage" placeholder="Enter image path..." required>
+            </div>
+
+            <div class="m-4">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="dbname" placeholder="Enter name..." required>
+            </div>
+
+            <div class="m-4">
+                <label for="department">Department</label>
+                <input type="text" class="form-control" id="department" name="dbdepartment" placeholder="Enter department..." required>
+            </div>
+
+            <div class="m-4">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" name="dbphone" placeholder="Enter phone number..." required>
+            </div>
+
+            <div class="m-4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="dbemail" placeholder="Enter email..." required>
+            </div>
+        </from>
+    </div>
+   
     
-    <h1>Our Doctor</h1>
+
+
+        
+
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
