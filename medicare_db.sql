@@ -34,3 +34,14 @@ CREATE TABLE `myadmin` (
   `pass1` varchar(255) NOT NULL,
    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `ourdoctor` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+   PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
