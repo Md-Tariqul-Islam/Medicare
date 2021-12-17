@@ -136,3 +136,16 @@ header span.icon {
   
   
 }
+
+
+/* Doctor */
+#image{
+  height: 23rem;
+}
+#docemail{
+  text-decoration: none;
+  color: black;
+}
+#docemail:hover{
+  color: #f14242;
+}
