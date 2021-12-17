@@ -27,6 +27,9 @@
         }
         mysqli_close($link);
     }
+  // data select
+  $select_sql = "SELECT * FROM ourdoctor";
+  $allData=mysqli_query($link,$select_sql);
 
 ?>
 
@@ -51,8 +54,10 @@
 
   </head>
   <body>
-  
-    <div class="card-body border">
+
+    <a class="text-decoration-none" href="login.php">Log Out</a>
+
+    <div class="container card-body border bg-info shadow rounded">
         <h1 class="card-title">Add doctor</h1>
         <form action="" method="post">
 
@@ -88,11 +93,51 @@
         </from>
     </div>
    
-    
 
 
         
 
+
+
+    
+    <div class="container card-body border bg-dark shadow rounded my-4">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <?php 
+                    if( mysqli_num_rows($allData)>0){ 
+                    while($fetchData=mysqli_fetch_assoc($allData)) {?>
+
+                    <tr>
+                        <td><?php echo $fetchData['image'];?></td>
+                        <td><?php echo $fetchData['name'];?></td>
+                        <td><?php echo $fetchData['department'];?></td>
+                        <td><?php echo $fetchData['phone'];?></td>
+                        <td><?php echo $fetchData['email'];?></td>
+                    </tr>
+                    <?php }?>
+                    <?php }else{?>
+                    <tr>
+                        <td colspan="5">
+                            <p class="mb-0">No Data In The Database</p>
+                        </td>
+                    </tr>
+                    <?php }?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
 

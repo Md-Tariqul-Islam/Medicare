@@ -190,8 +190,7 @@
                                     </option>
                                     <option value="Dr. Amanda Rusco, Neurology">Dr. Akram Hossain, Neurology</option>
                                     <option value="Dr. Akram Hossain, Dental">Dr.  Tariqul Islam, Dental</option>
-                                    <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>
-                                    
+                                    <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>  
                                 </select>
                             </div>
 
@@ -228,7 +227,6 @@
       
 
       <?php 
-      
       if( mysqli_num_rows($allData)>0){ 
       while($fetchData=mysqli_fetch_assoc($allData)) {?>
 
