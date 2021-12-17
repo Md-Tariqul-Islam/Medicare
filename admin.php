@@ -1,6 +1,33 @@
 <?php 
-session_start();
-echo "Welcome," . $_SESSION['name'];
+    session_start();
+    echo "Welcome," . $_SESSION['name'];
+    include "dbconnect.php";
+    if(isset($_POST['submit'])){
+        $image= $_POST['dbimage'];
+        $name= $_POST['dbname'];
+        $department= $_POST['dbdepartment'];
+        $phone= $_POST['dbphone'];
+        $email=$_POST['dbemail'];
+
+        $sql="INSERT INTO ourdoctor( image, name, department, phone, email) VALUES ('$image','$name', '$department','$phone','$email')";
+
+        if(mysqli_query($link,$sql)){
+            ?>
+            <script>
+                alert("Recorded Successfully");
+            </script>
+            <?php
+        }
+        else{
+            ?>
+            <script>
+                alert("Recorded is not added Successfully");
+            </script>
+            <?php
+        }
+        mysqli_close($link);
+    }
+
 ?>
 
 
@@ -25,7 +52,7 @@ echo "Welcome," . $_SESSION['name'];
   </head>
   <body>
   
-    <div class="card-body">
+    <div class="card-body border">
         <h1 class="card-title">Add doctor</h1>
         <form action="" method="post">
 
@@ -53,6 +80,11 @@ echo "Welcome," . $_SESSION['name'];
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="dbemail" placeholder="Enter email..." required>
             </div>
+
+            <div class="m-4 col-2">
+                <button type="submit" class="form-control bg-primary" id="submit" name="submit">Submit</button>
+            </div>
+
         </from>
     </div>
    
