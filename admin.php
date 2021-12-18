@@ -1,7 +1,9 @@
 <?php 
     session_start();
     //echo "Welcome," . $_SESSION['name'];
-    
+    include "dbconnect.php";
+    $select_sql = "SELECT * FROM tblappointment";
+    $allData=mysqli_query($link,$select_sql);
 ?>
 
 
@@ -78,7 +80,26 @@
                           </thead>
 
                           <tbody>
-                         
+                          <?php 
+                              if( mysqli_num_rows($allData)>0){ 
+                              while($fetchData=mysqli_fetch_assoc($allData)) {?>
+                              <tr>
+                                  <td><?php echo $fetchData['name'];?></td>
+                                  <td><?php echo $fetchData['email'];?></td>
+                                  <td><?php echo $fetchData['appDate'];?></td>
+                                  <td><?php echo $fetchData['department'];?></td>
+                                  <td><?php echo $fetchData['cdoctor'];?></td>
+                                  <td><?php echo $fetchData['phone'];?></td>
+                                  <td><?php echo $fetchData['appMessage'];?></td>
+                              </tr>
+                              <?php }?>
+                              <?php }else{?>
+                              <tr>
+                                  <td colspan="5">
+                                      <p class="mb-0">No Data In The Database</p>
+                                  </td>
+                              </tr>
+                              <?php }?>
 
                           </tbody>
                       </table>
