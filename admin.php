@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    echo "Welcome," . $_SESSION['name'];
+    //echo "Welcome," . $_SESSION['name'];
 ?>
 
 
@@ -26,15 +26,13 @@
   <body>
 
     
-
-    
-
     <div class="container-fluid">
       <div class="row min-vh-100 flex-nowrap">
 
         <!-- Sidebar With Navbar -->
         <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-info sticky-top">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white sticky-top">
+
             <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="admin.php">
                 <i class="fas fa-plus-square"></i>
                 <span class="px-2 d-none d-sm-inline">Medicare</span>
@@ -53,7 +51,16 @@
         
 
         <main class="col px-0"> 
-            <div class="container">  
+            <div class="d-flex justify-content-between border bg-light">
+                <div class="p-2"><h2 class=""><?php echo "Welcome " . $_SESSION['name'];?></h2></div>
+                <div class="p-2">  
+                <a href="#" class="btn btn-info btn-lg">
+                  <span ><i class="fas fa-sign-out-alt"></i> Log out </span> 
+                </a>
+                </div>
+            </div>   
+
+            <div class="container">
                 <h1>Show appoinment list</h1>
             </div>
         </main>

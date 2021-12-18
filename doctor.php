@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    echo "Welcome," . $_SESSION['name'];
+    //echo "Welcome," . $_SESSION['name'];
     include "dbconnect.php";
     if(isset($_POST['submit'])){
         $image= $_POST['dbimage'];
@@ -55,7 +55,6 @@
   </head>
   <body>
 
-    <a class="text-decoration-none" href="login.php">Log Out</a>
     <div class="container-fluid">
       <div class="row min-vh-100 flex-nowrap">
         <!-- Sidebar With Navbar -->
@@ -79,6 +78,16 @@
         </aside>
         <!-- Main part -->
         <main class="col px-0">
+            <!-- Header  -->
+            <div class="d-flex justify-content-between border bg-light mb-4 shadow">
+                <div class="p-2"><h2 class=""><?php echo "Welcome " . $_SESSION['name'];?></h2></div>
+                <div class="p-2">  
+                <a href="#" class="btn btn-info btn-lg">
+                  <span ><i class="fas fa-sign-out-alt"></i> Log out </span> 
+                </a>
+                </div>
+            </div>  
+            
             <div class="container">
                 <div class="card-body border bg-info shadow rounded">
                     <h1 class="card-title">Add doctor</h1>
@@ -109,8 +118,8 @@
                             <input type="email" class="form-control" id="email" name="dbemail" placeholder="Enter email..." required>
                         </div>
 
-                        <div class="m-4 col-2">
-                            <button type="submit" class="form-control bg-primary" id="submit" name="submit">Submit</button>
+                        <div class="ms-4 col-3">
+                            <button type="submit" class="form-control btn btn-primary" name="submit"><i class="far fa-save"></i> Submit</button>
                         </div>
 
                     </from>
