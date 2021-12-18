@@ -18,11 +18,7 @@
             if($pass===$pass1){
                 $sql = "INSERT INTO myadmin (name,email,pass,pass1) VALUES ('$name','$email','$pass','$pass1')";
                 if(mysqli_query($link,$sql)){
-                    ?>
-                    <script>
-                        alert("Recorded Successfully");
-                    </script>
-                    <?php
+                    header("location:login.php");
                 }
                 else{
                     ?>

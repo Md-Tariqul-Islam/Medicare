@@ -1,6 +1,7 @@
 <?php 
     session_start();
     //echo "Welcome," . $_SESSION['name'];
+    
 ?>
 
 
@@ -48,7 +49,6 @@
             </a>
             </div>                         
         </aside>
-        
 
         <main class="col px-0"> 
             <div class="d-flex justify-content-between border bg-light">
@@ -60,9 +60,32 @@
                 </div>
             </div>   
 
-            <div class="container">
-                <h1>Show appoinment list</h1>
+            
+          <div class="container mt-3">
+            <div class="card-body border bg-dark shadow rounded">
+                  <div class="table-responsive">
+                      <table class="table table-dark table-hover">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Email</th>
+                                  <th>App. Date</th>
+                                  <th>Department</th>
+                                  <th>Doctor</th>
+                                  <th>Phone</th>
+                                  <th>Massage</th>
+                              </tr>
+                          </thead>
+
+                          <tbody>
+                         
+
+                          </tbody>
+                      </table>
+                  </div>
             </div>
+          </div>   
+
         </main>
    
 
