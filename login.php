@@ -58,15 +58,15 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Welcome!!</h1>
                             </div>
-                            <form action="" method="post" class="user">
+                            <form action="" method="post">
                                 <div class="form-group m-4">
-                                    <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-3"
+                                    <input type="email" name="lemail" class="form-control rounded-pill p-3"
                                         id="exampleInputEmail" aria-describedby="emailHelp"
                                         placeholder="Enter Email Address..." required>
                                 </div>
 
                                 <div class="form-group m-4">
-                                    <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-3"
+                                    <input type="password" name="lpass" class="form-control rounded-pill p-3"
                                         id="exampleInputPassword" placeholder="Password" required>
                                 </div>
                                 

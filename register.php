@@ -67,19 +67,19 @@
                     <!-- Nested Row within Card Body -->
                     <div class="row">
                         <div class="col-lg-12 ">
-                            <div class="p-5 lpage">
+                            <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-3">Welcome!!</h1>
                                 </div>
-                                <form action="register.php" method="post" class="user">
+                                <form action="register.php" method="post">
 
                                     <div class="form-group m-4">
-                                        <input type="text" name="lName" class="form-control form-control-user rounded-pill p-2"
+                                        <input type="text" name="lName" class="form-control rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Enter Username..." required>
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="email" name="lemail" class="form-control form-control-user rounded-pill p-2 "
+                                        <input type="email" name="lemail" class="form-control rounded-pill p-2 "
                                             id="exampleInputEmail" aria-describedby="emailHelp"
                                             placeholder="Enter Email Address..." required>
                                             <?php 
@@ -90,12 +90,12 @@
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="password" name="lpass" class="form-control form-control-user rounded-pill p-2"
+                                        <input type="password" name="lpass" class="form-control rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Password" required>
                                     </div>
 
                                     <div class="form-group m-4">
-                                        <input type="password" name="lpass1" class="form-control form-control-user rounded-pill p-2"
+                                        <input type="password" name="lpass1" class="form-control rounded-pill p-2"
                                             id="exampleInputPassword" placeholder="Confirm Password" required>
                                             <?php 
                                               if($error1!=null){

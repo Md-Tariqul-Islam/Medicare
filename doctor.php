@@ -82,7 +82,7 @@
             <div class="d-flex justify-content-between border bg-light mb-4 shadow">
                 <div class="p-2"><h2 class=""><?php echo "Welcome " . $_SESSION['name'];?></h2></div>
                 <div class="p-2">  
-                <a href="#" class="btn btn-info btn-lg">
+                <a href="index.php" class="btn btn-info btn-lg">
                   <span ><i class="fas fa-sign-out-alt"></i> Log out </span> 
                 </a>
                 </div>

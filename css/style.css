@@ -70,17 +70,12 @@ header span.icon {
 /* ****************
  Appointment
 **********************/
-#appointment {
-  padding-top: 100px;
-}
-.appimage img{
-  height: 562px;
-}
 #appointment label {
   color: #393939;
   font-weight: 500;
 }
-#appointment .section-title h2 {
+
+#appointment h2 {
   font-size: 48px;
   line-height: 58px;
   font-weight: 600;
@@ -94,7 +89,6 @@ header span.icon {
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 15px;
-  transition: all ease-in-out 0.4s;
 }
 
 #appointment input,
@@ -112,29 +106,6 @@ header span.icon {
 #appointment #cf-submit:hover {
   background: #bb2c33;
   color: #ffffff;
-}
-
-@media only screen and (max-width: 767px) {
-  #appointment .section-title h2{
-    font-size: 32px;
-    line-height: 42px;
-    font-weight: 500;
-  }
-  
-
-  .appimage{
-    text-align: center;
-  }
-  .appimage img{
-    display: inline;
-  }
-
-  #appointment-form {
-    padding-top: 4em;
-    padding-bottom: 4em;
-  }
-  
-  
 }
 
 

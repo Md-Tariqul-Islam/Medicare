@@ -45,3 +45,16 @@ CREATE TABLE `ourdoctor` (
   `email` varchar(255) NOT NULL,
    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `tblappointment` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `appDate` date NOT NULL,
+  `department` varchar(255) DEFAULT NULL,
+  `cdoctor` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `appMessage` varchar(255) NOT NULL,
+   PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

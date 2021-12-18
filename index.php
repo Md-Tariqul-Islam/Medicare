@@ -2,8 +2,36 @@
 <?php 
   //  database
   include "dbconnect.php";
+  if(isset($_POST['submit'])){
+    $name= $_POST['name'];
+    $email= $_POST['email'];
+    $date= $_POST['date'];
+    $department= $_POST['department'];
+    $choosedoctor=$_POST['cdoctor'];
+    $phone= $_POST['phone'];
+    $message= $_POST['message'];
+    $sql="INSERT INTO tblappointment( name, email, appDate, department, cdoctor, phone, appMessage) VALUES ('$name', '$email', '$date', '$department', '$choosedoctor', '$phone','$message')";
+
+    if(mysqli_query($link,$sql)){
+      ?>
+      <script>
+          alert("Recorded Successfully");
+      </script>
+      <?php
+      header("location:index.php");
+  }
+  else{
+      ?>
+      <script>
+          alert("Recorded is not added Successfully");
+      </script>
+      <?php
+  }
+  mysqli_close($link);
+}
 
   // data select
+  include "dbconnect.php";
   $select_sql = "SELECT * FROM ourdoctor";
   $allData=mysqli_query($link,$select_sql);
   //print_r($allData);
@@ -51,7 +79,7 @@
 
             </div>
         </div>
-    </header>
+     </header>
 
 
      <!--Menu-->
@@ -69,13 +97,13 @@
         <div class="collapse navbar-collapse" id="navbarColl">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="#">About us</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">Doctors</a>
+              <a class="nav-link" href="#doctor">Doctors</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="#">News</a>
@@ -84,7 +112,7 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item px-2 pe-5">
-              <a class="nav-link" href="#" id="make-appoint">Make an appointment</a>
+              <a class="nav-link" href="#appointment" id="make-appoint">Make an appointment</a>
             </li>
           </ul>
         </div>
@@ -94,7 +122,7 @@
     
 
     <!-- Carousel  -->
-    <section class="home">
+    <section id="home">
 
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 
@@ -137,122 +165,108 @@
     </section>
     <!-- home end  -->
 
-    <!-- Make an appointment start  -->
-    <section id="appointment" data-stellar-background-ratio="3">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-md-6 col-sm-6 appimage">
-                    <img src="images/appointment-image.jpg" class="img-responsive" alt="">
-                </div>
+    <!-- Doctors -->
+    <div class="container mt-5" id="doctor">
+      <div class="row">
 
-                <div class="col-md-6 col-sm-6">
-                    <!-- CONTACT FORM HERE -->
-                    <form id="appointment-form" role="form" method="post" action="">
-
-                        <!-- SECTION TITLE -->
-                        <div class="section-title">
-                            <h2>Make an appointment</h2>
-                        </div>
-
-                        <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
-                                    required>
-                             </div>
-
-                             <div class="col-md-6 col-sm-6">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Your Email" required>
-                            </div>
-
-                            <div class="col-md-6 col-sm-6">
-                                <label for="date">Select Date</label>
-                                <input type="date" name="date" value="" class="form-control" required>
-                            </div>
-
-                            <div class="col-md-6 col-sm-6">
-                                <label for="select">Select Department</label>
-                                <select class="form-control" name="department">
-                                    <option value="General Health">General Health</option>
-                                    <option value="Cardiology">Cardiology</option>
-                                    <option value="Neurology">Neurology</option>
-                                    <option value="Orthopaedics">Orthopaedics</option>
-                                    <option value="Dental">Dental</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 col-sm-12">
-                                <label for="select">Choose Doctor</label>
-                                <select class="form-control" name="cdoctor">
-                                    <option value="Dr. Timmothy Johnson, Cardiology">Dr. Tariqul Islam, Cardiology
-                                    </option>
-                                    <option value="Dr. Amanda Rusco, Neurology">Dr. Akram Hossain, Neurology</option>
-                                    <option value="Dr. Akram Hossain, Dental">Dr.  Tariqul Islam, Dental</option>
-                                    <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>  
-                                </select>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12">
-                                <label for="telephone">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"
-                                    required>
-                                <label for="Message">Additional Message</label>
-                                <textarea class="form-control" rows="5" id="message" name="message"
-                                    placeholder="Message" required></textarea>
-                                <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
-                                </button>
-                                
-                            </div>
-                        </div>
-
-                            
-                    </form>
-                </div>
-
-            </div>
+        <div class="col-md-12 col-sm-12">     
+          <h2 class="text-center">Our Doctors</h2>    
         </div>
-    </section>
-    <!-- appointment end -->
+        
+        <?php 
+        if( mysqli_num_rows($allData)>0){ 
+        while($fetchData=mysqli_fetch_assoc($allData)) {?>
 
-
-
-  <div class="container mt-4">
-    <div class="row">
-
-      <div class="col-md-12 col-sm-12">     
-        <h2 class="text-center">Our Doctors</h2>    
-      </div>
-      
-
-      <?php 
-      if( mysqli_num_rows($allData)>0){ 
-      while($fetchData=mysqli_fetch_assoc($allData)) {?>
-
-        <div class="col-md-4 col-sm-6 my-3">
-          <div class="card shadow">
-            <img src="<?php echo $fetchData['image'];?>" class="card-img-top" alt="this" id="image">
-            <div class="card-body">
-              <h2><?php echo $fetchData['name'];?></h2>
-              <h6 class="lead"><?php echo $fetchData['department'];?></h6>
-              <p><i class="fas fa-phone"></i> <?php echo $fetchData['phone'];?></p>
-              <p><i class="far fa-envelope"></i> <a href="mailto:<?php echo $fetchData['email'];?>" id="docemail"><?php echo $fetchData['email'];?></a></p>
+          <div class="col-md-4 col-sm-6 my-3">
+            <div class="card shadow">
+              <img src="<?php echo $fetchData['image'];?>" class="card-img-top" alt="this" id="image">
+              <div class="card-body">
+                <h2><?php echo $fetchData['name'];?></h2>
+                <h6 class="lead"><?php echo $fetchData['department'];?></h6>
+                <p><i class="fas fa-phone"></i> <?php echo $fetchData['phone'];?></p>
+                <p><i class="far fa-envelope"></i> <a href="mailto:<?php echo $fetchData['email'];?>" id="docemail"><?php echo $fetchData['email'];?></a></p>
+              </div>
             </div>
           </div>
-        </div>
 
-      <?php 
-         }
-        }else{
-      ?>
-      <div class="col-lg-12">No Doctor to show</div>
-      <?php }?>
+        <?php 
+          }
+          }else{
+        ?>
+        <div class="col-lg-12">No Doctor to show</div>
+        <?php }?>
 
+      </div>
     </div>
-  </div>
 
-    
+
+
+
+    <!-- Make an appointment start  -->
+
+    <div class="container"id="appointment">
+      <div class="card-body">
+        <h2 class="card-title">Make an Appointment</h2>
+        <form id="appointment-form" method="post" action="">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
+                  required>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email"
+                  placeholder="Your Email" required>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+              <label for="date">Select Date</label>
+              <input type="date" name="date" value="" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+              <label for="select">Select Department</label>
+              <select class="form-control" name="department">
+                  <option value="General Health">General Health</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Orthopaedics">Orthopaedics</option>
+                  <option value="Dental">Dental</option>
+              </select>
+          </div>
+          <div class="col-md-12 col-sm-12">
+              <label for="select">Choose Doctor</label>
+              <select class="form-control" name="cdoctor">
+                  <option value="Dr. Timmothy Johnson, Cardiology">Dr. Tariqul Islam, Cardiology
+                  </option>
+                  <option value="Dr. Amanda Rusco, Neurology">Dr. Akram Hossain, Neurology</option>
+                  <option value="Dr. Akram Hossain, Dental">Dr.  Tariqul Islam, Dental</option>
+                  <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>  
+              </select>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+              <label for="telephone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"
+                  required>
+              <label for="Message">Additional Message</label>
+              <textarea class="form-control" rows="5" id="message" name="message"
+                  placeholder="Message" required></textarea>
+              <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
+              </button>
+              
+          </div>
+
+          </div>
+        </form>
+                           
+      </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
