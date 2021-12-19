@@ -201,9 +201,6 @@
       </div>
     </div>
 
-
-
-
     <!-- Make an appointment start  -->
 
     <div class="container"id="appointment">
