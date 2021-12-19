@@ -13,20 +13,15 @@
     $sql="INSERT INTO tblappointment( name, email, appDate, department, cdoctor, phone, appMessage) VALUES ('$name', '$email', '$date', '$department', '$choosedoctor', '$phone','$message')";
 
     if(mysqli_query($link,$sql)){
-      ?>
-      <script>
-          alert("Recorded Successfully");
-      </script>
-      <?php
       header("location:index.php");
-  }
-  else{
-      ?>
-      <script>
-          alert("Recorded is not added Successfully");
-      </script>
-      <?php
-  }
+    }
+    else{
+        ?>
+        <script>
+            alert("Recorded is not added Successfully");
+        </script>
+        <?php
+    }
   mysqli_close($link);
 }
 
@@ -35,6 +30,12 @@
   $select_sql = "SELECT * FROM ourdoctor";
   $allData=mysqli_query($link,$select_sql);
   //print_r($allData);
+  $select_dept="SELECT DISTINCT department FROM ourdoctor";
+  $allDept=mysqli_query($link,$select_dept);
+  //print_r($all) ;
+
+  $select_doc="SELECT * FROM ourdoctor";
+  $allDoc=mysqli_query($link,$select_doc);
 
 ?>
 
@@ -227,25 +228,34 @@
               <input type="date" name="date" value="" class="form-control" required>
           </div>
 
+        
           <div class="col-md-6 col-sm-12">
-              <label for="select">Select Department</label>
-              <select class="form-control" name="department">
-                  <option value="General Health">General Health</option>
-                  <option value="Cardiology">Cardiology</option>
-                  <option value="Neurology">Neurology</option>
-                  <option value="Orthopaedics">Orthopaedics</option>
-                  <option value="Dental">Dental</option>
-              </select>
+            <label for="select">Select Department</label>
+            <select class="form-control" name="department">
+              <?php 
+                if( mysqli_num_rows($allDept)>0){ 
+                while($fetchData=mysqli_fetch_assoc($allDept)) {?>
+                  <option value="<?php echo $fetchData['department'];?>"><?php echo $fetchData['department'];?></option>
+              <?php 
+                }
+                }
+              ?>
+            </select>
           </div>
+
           <div class="col-md-12 col-sm-12">
-              <label for="select">Choose Doctor</label>
-              <select class="form-control" name="cdoctor">
-                  <option value="Dr. Timmothy Johnson, Cardiology">Dr. Tariqul Islam, Cardiology
-                  </option>
-                  <option value="Dr. Amanda Rusco, Neurology">Dr. Akram Hossain, Neurology</option>
-                  <option value="Dr. Akram Hossain, Dental">Dr.  Tariqul Islam, Dental</option>
-                  <option value="Dr. Sayma Ikra, Cardiology">Dr. Osman Gani, Cardiology</option>  
-              </select>
+            <label for="select">Choose Doctor</label>
+            <select class="form-control" name="cdoctor">
+            <?php 
+              if( mysqli_num_rows($allDoc)>0){ 
+              while($fetchData=mysqli_fetch_assoc($allDoc)) {?>
+                <option value="<?php echo $fetchData['name'].', '.$fetchData['department'];?>"><?php echo $fetchData['name'].', '.$fetchData['department'];?>
+                </option>
+            <?php 
+              }
+              }
+            ?>
+            </select>
           </div>
 
           <div class="col-md-12 col-sm-12">

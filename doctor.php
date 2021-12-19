@@ -12,11 +12,7 @@
         $sql="INSERT INTO ourdoctor( image, name, department, phone, email) VALUES ('$image','$name', '$department','$phone','$email')";
 
         if(mysqli_query($link,$sql)){
-            ?>
-            <script>
-                alert("Recorded Successfully");
-            </script>
-            <?php
+            header("location:doctor.php");
         }
         else{
             ?>
@@ -28,6 +24,7 @@
         mysqli_close($link);
     }
   // data select
+  include "dbconnect.php";
   $select_sql = "SELECT * FROM ourdoctor";
   $allData=mysqli_query($link,$select_sql);
 
