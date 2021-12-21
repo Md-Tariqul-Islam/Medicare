@@ -110,7 +110,7 @@
               <a class="nav-link" href="#">News</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
             <li class="nav-item px-2 pe-5">
               <a class="nav-link" href="#appointment" id="make-appoint">Make an appointment</a>
@@ -272,6 +272,63 @@
                            
       </div>
     </div>
+
+    <!-- Google Map  -->
+    <section id="google-map">  
+      <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.804405088933!2d90.37033771536231!3d23.718677895903465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf2b07157e07%3A0x9dd966cf1508eda2!2sMedicare%20Diagnostic%20%26%20Hospital!5e0!3m2!1sen!2sbd!4v1630913341570!5m2!1sen!2sbd"
+            width="100%" height="350" style="border:0;" frameborder="0" allowfullscreen=""></iframe>
+    </section>
+
+    <!-- Contact section start -->
+    <div class="container"id="contact">
+      <div class="card-body">
+        <h2 class="card-title">Contact us</h2>
+        <form id="contact-form" method="post" action="">
+          <div class="row">
+            
+
+          <div class="col-md-12 col-sm-12">
+              <label for="FristName">First Name</label>
+              <input type="text" class="form-control" id="" name="" placeholder="First Name"
+                  required>
+                  <label for="LastName">Last Name</label>
+              <input type="text" class="form-control" id="" name="" placeholder="Last Name"
+                  required>
+              <label for="Message">Contact Message</label>
+              <textarea class="form-control" rows="5" id="message" name="message"
+                  placeholder="Message" required></textarea>
+              <button type="submit" class="form-control" id="cf-submit" name="submit">Send
+              </button>
+              
+          </div>
+
+          </div>
+        </form>
+                           
+      </div>
+    </div>
+
+    <!-- Footer section Start  -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-12 col-sm-12 border-top">
+                    <!-- <div class="col-md-4 col-sm-6"> -->
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2021 Our Company
+
+                                | Design: Akram & Tarik</p>
+                        </div>
+                    <!-- </div> -->
+                    
+                    
+                </div>
+
+            </div>
+        </div>
+      </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -120,3 +120,65 @@ header span.icon {
 #docemail:hover{
   color: #f14242;
 }
+
+
+/* ****************
+ Contact
+**********************/
+#contact label {
+  color: #393939;
+  font-weight: 500;
+}
+
+#contact h2 {
+  font-size: 48px;
+  line-height: 58px;
+  text-align: center;
+  font-weight: 600;
+  margin: 0px 0px 15px;
+}
+#contact .form-control {
+  background: #f9f9f9;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+#contact input,
+#contact select {
+  height: 45px;
+}
+
+#contact #cf-submit {
+  background: #f1428b;
+  color: #ffffff;
+  font-weight: 600;
+  height: 55px;
+}
+
+#contact #cf-submit:hover {
+  background: #bb2c33;
+  color: #ffffff;
+}
+
+/**************
+  Footer
+*******************/
+.footer-section {
+  width: 100%;
+  padding: 30px 0px;
+}
+.copyright-text p,
+  .footer-link a {
+    color: #858585;
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+
+  
