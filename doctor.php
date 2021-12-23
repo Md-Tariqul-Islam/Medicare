@@ -132,6 +132,7 @@
                                     <th>Department</th>
                                     <th>Phone</th>
                                     <th>Email</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 
@@ -146,6 +147,10 @@
                                     <td><?php echo $fetchData['department'];?></td>
                                     <td><?php echo $fetchData['phone'];?></td>
                                     <td><?php echo $fetchData['email'];?></td>
+                                    <td>
+                                        <a href="#"> <i class="fas fa-edit ps-3" style="color:green;"></i></a>
+                                        <a href="#"> <i class="fas fa-trash-alt" style="color:red;"></i></a>
+                                    </td>
                                 </tr>
                                 <?php }?>
                                 <?php }else{?>

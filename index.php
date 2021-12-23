@@ -24,6 +24,28 @@
     }
   mysqli_close($link);
 }
+if(isset($_POST['send'])){
+  $name= $_POST['name'];
+  $phone= $_POST['phone'];
+  $email= $_POST['email'];
+  $message= $_POST['message'];
+  $sql="INSERT INTO contacts( name, phone, email, message) VALUES ('$name','$phone', '$email','$message')";
+  if(mysqli_query($link,$sql)){
+    header("location:index.php");
+  }
+  else{
+      ?>
+      <script>
+          alert("Recorded is not added Successfully");
+      </script>
+      <?php
+  }
+  mysqli_close($link);
+}
+
+
+
+
 
   // data select
   include "dbconnect.php";
@@ -256,10 +278,9 @@
           </div>
 
           <div class="col-md-12 col-sm-12">
-              <label for="telephone">Phone Number</label>
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"
-                  required>
-              <label for="Message">Additional Message</label>
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+              <label for="message">Additional Message</label>
               <textarea class="form-control" rows="5" id="message" name="message"
                   placeholder="Message" required></textarea>
               <button type="submit" class="form-control" id="cf-submit" name="submit">Submit
@@ -286,21 +307,17 @@
         <h2 class="card-title">Contact us</h2>
         <form id="contact-form" method="post" action="">
           <div class="row">
-            
-
           <div class="col-md-12 col-sm-12">
-              <label for="FristName">First Name</label>
-              <input type="text" class="form-control" id="" name="" placeholder="First Name"
-                  required>
-                  <label for="LastName">Last Name</label>
-              <input type="text" class="form-control" id="" name="" placeholder="Last Name"
-                  required>
-              <label for="Message">Contact Message</label>
-              <textarea class="form-control" rows="5" id="message" name="message"
-                  placeholder="Message" required></textarea>
-              <button type="submit" class="form-control" id="cf-submit" name="submit">Send
-              </button>
-              
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+              <label for="message">Additional Message</label>
+              <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message" required></textarea>
+              <button type="submit" class="form-control" id="cf-submit" name="send">Send
+              </button>    
           </div>
 
           </div>
@@ -317,7 +334,6 @@
                     <!-- <div class="col-md-4 col-sm-6"> -->
                         <div class="copyright-text">
                             <p>Copyright &copy; 2021 Our Company
-
                                 | Design: Akram & Tarik</p>
                         </div>
                     <!-- </div> -->

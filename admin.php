@@ -76,6 +76,7 @@
                                   <th>Doctor</th>
                                   <th>Phone</th>
                                   <th>Massage</th>
+                                  <th>Action</th>
                               </tr>
                           </thead>
 
@@ -91,6 +92,9 @@
                                   <td><?php echo $fetchData['cdoctor'];?></td>
                                   <td><?php echo $fetchData['phone'];?></td>
                                   <td><?php echo $fetchData['appMessage'];?></td>
+                                  <td style="text-align:center;">
+                                      <a href="#"><i class="fas fa-envelope" style="color:blue;"></i></a>
+                                  </td>
                               </tr>
                               <?php }?>
                               <?php }else{?>
