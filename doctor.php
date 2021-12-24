@@ -148,8 +148,8 @@
                                     <td><?php echo $fetchData['phone'];?></td>
                                     <td><?php echo $fetchData['email'];?></td>
                                     <td>
-                                        <a href="#"> <i class="fas fa-edit ps-3" style="color:green;"></i></a>
-                                        <a href="#"> <i class="fas fa-trash-alt" style="color:red;"></i></a>
+                                        <a href="#" > <i class="fas fa-edit ps-2" style="color:green;"></i></a>
+                                        <a href="delete.php?docID=<?php echo $fetchData['id'] ?>"> <i class="fas fa-trash-alt" style="color:red;"></i></a>
                                     </td>
                                 </tr>
                                 <?php }?>
@@ -170,33 +170,6 @@
 
       </div>
     </div>
-
-
-
-    <!-- Add doctor -->
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
