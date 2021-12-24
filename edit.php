@@ -1,15 +1,14 @@
 <?php 
     session_start();
-    //echo "Welcome," . $_SESSION['name'];
     include "dbconnect.php";
+    $edit_id=$_GET['docID'];
     if(isset($_POST['submit'])){
         $image= $_POST['dbimage'];
         $name= $_POST['dbname'];
         $department= $_POST['dbdepartment'];
         $phone= $_POST['dbphone'];
         $email=$_POST['dbemail'];
-
-        $sql="INSERT INTO ourdoctor( image, name, department, phone, email) VALUES ('$image','$name', '$department','$phone','$email')";
+        $sql="UPDATE ourdoctor SET image='$image', name='$name', department='$department', phone='$phone', email='$email'WHERE id=$edit_id";
 
         if(mysqli_query($link,$sql)){
             header("location:doctor.php");
@@ -23,14 +22,17 @@
         }
         mysqli_close($link);
     }
-  // data select
-  include "dbconnect.php";
-  $select_sql = "SELECT * FROM ourdoctor";
-  $allData=mysqli_query($link,$select_sql);
+    include "dbconnect.php";
+    if(isset($_GET['docID'])){
+        $edit_id=$_GET['docID'];
+        $sql="SELECT * FROM ourdoctor WHERE id=$edit_id";
+        $s_query=mysqli_query($link,$sql);
+        if( mysqli_num_rows($s_query)>0){ 
+            while($fetchData=mysqli_fetch_assoc($s_query)) {
+                
+        ?>
 
-?>
-
-
+            
 <!doctype html>
 <html lang="en">
   <head>
@@ -92,27 +94,27 @@
 
                         <div class="m-4">
                             <label for="image">Image Path</label>
-                            <input type="text" class="form-control" id="image" name="dbimage" placeholder="Enter image path..." required>
+                            <input type="text" value="<?php echo $fetchData['image'];?>" class="form-control" id="image" name="dbimage" placeholder="Enter image path..." required>
                         </div>
 
                         <div class="m-4">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="dbname" placeholder="Enter name..." required>
+                            <input type="text" value="<?php echo $fetchData['name'];?>" class="form-control" id="name" name="dbname" placeholder="Enter name..." required>
                         </div>
 
                         <div class="m-4">
                             <label for="department">Department</label>
-                            <input type="text" class="form-control" id="department" name="dbdepartment" placeholder="Enter department..." required>
+                            <input type="text" value="<?php echo $fetchData['department'];?>" class="form-control" id="department" name="dbdepartment" placeholder="Enter department..." required>
                         </div>
 
                         <div class="m-4">
                             <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="dbphone" placeholder="Enter phone number..." required>
+                            <input type="text" value="<?php echo $fetchData['phone'];?>" class="form-control" id="phone" name="dbphone" placeholder="Enter phone number..." required>
                         </div>
 
                         <div class="m-4">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="dbemail" placeholder="Enter email..." required>
+                            <input type="email" value="<?php echo $fetchData['email'];?>" class="form-control" id="email" name="dbemail" placeholder="Enter email..." required>
                         </div>
 
                         <div class="ms-4 col-3">
@@ -120,51 +122,7 @@
                         </div>
 
                     </from>
-                </div>
-
-                <div class="card-body border bg-dark shadow rounded my-4">
-                    <div class="table-responsive">
-                        <table class="table table-dark table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Department</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                            <?php 
-                                if( mysqli_num_rows($allData)>0){ 
-                                while($fetchData=mysqli_fetch_assoc($allData)) {?>
-
-                                <tr>
-                                    <td><?php echo $fetchData['image'];?></td>
-                                    <td><?php echo $fetchData['name'];?></td>
-                                    <td><?php echo $fetchData['department'];?></td>
-                                    <td><?php echo $fetchData['phone'];?></td>
-                                    <td><?php echo $fetchData['email'];?></td>
-                                    <td>
-                                        <a href="edit.php?docID=<?php echo $fetchData['id'] ?>" > <i class="fas fa-edit ps-2" style="color:green;"></i></a>
-                                        <a href="delete.php?docID=<?php echo $fetchData['id'] ?>"> <i class="fas fa-trash-alt" style="color:red;"></i></a>
-                                    </td>
-                                </tr>
-                                <?php }?>
-                                <?php }else{?>
-                                <tr>
-                                    <td colspan="5">
-                                        <p class="mb-0">No Data In The Database</p>
-                                    </td>
-                                </tr>
-                                <?php }?>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>                      
+                </div>                     
              </div>
         </main>
 
@@ -174,3 +132,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+       <?php
+       
+       }
+       }
+       else{
+
+       }
+       }else{
+
+       }
+?>
