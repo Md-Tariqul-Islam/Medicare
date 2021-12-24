@@ -123,13 +123,10 @@ if(isset($_POST['send'])){
               <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">About us</a>
+              <a class="nav-link" href="#about">About us</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="#doctor">Doctors</a>
-            </li>
-            <li class="nav-item px-2">
-              <a class="nav-link" href="#">News</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="#contact">Contact</a>
@@ -187,7 +184,27 @@ if(isset($_POST['send'])){
 
     </section>
     <!-- home end  -->
+<!-- about -->
+<section id="about">
+        <div class="container py-5">
+            <div class="row">
 
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h2>Welcome to 
+                          <i class="fas fa-plus-square"></i>Medicare</h2>
+                        <div>
+                            <p>We're here when you need us. For everyday care or life-changing care, you can count on us
+                                to keep you and your loved ones safe and healthy.</p>
+                            <p>Our friendly and knowledgeable staff teams provide support throughout our many specialty
+                                departments and centers, from primary visits to emergency care.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Doctors -->
     <div class="container mt-5" id="doctor">
@@ -293,14 +310,7 @@ if(isset($_POST['send'])){
                            
       </div>
     </div>
-
-    <!-- Google Map  -->
-    <section id="google-map">  
-      <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.804405088933!2d90.37033771536231!3d23.718677895903465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf2b07157e07%3A0x9dd966cf1508eda2!2sMedicare%20Diagnostic%20%26%20Hospital!5e0!3m2!1sen!2sbd!4v1630913341570!5m2!1sen!2sbd"
-            width="100%" height="350" style="border:0;" frameborder="0" allowfullscreen=""></iframe>
-    </section>
-
+    
     <!-- Contact section start -->
     <div class="container"id="contact">
       <div class="card-body">

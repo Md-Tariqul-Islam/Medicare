@@ -109,6 +109,14 @@ header span.icon {
 }
 
 
+#about {
+  background: url('../images/about-bg.jpg') no-repeat top center;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+
 /* Doctor */
 #image{
   height: 23rem;
