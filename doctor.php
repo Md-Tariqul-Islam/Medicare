@@ -84,7 +84,7 @@
                 </a>
                 </div>
             </div>  
-            
+            <!-- Add Doctor Form -->
             <div class="container">
                 <div class="card-body border bg-info shadow rounded">
                     <h1 class="card-title">Add doctor</h1>
@@ -121,7 +121,8 @@
 
                     </from>
                 </div>
-
+                <!-- Appointment Table -->
+                <h2 class="card-title border-bottom pt-5 pb-2">View Appointment</h2>
                 <div class="card-body border bg-dark shadow rounded my-4">
                     <div class="table-responsive">
                         <table class="table table-dark table-hover">

@@ -1,6 +1,8 @@
 <?php 
     session_start();
+    //connect database
     include "dbconnect.php";
+    //Updte and set 
     $edit_id=$_GET['docID'];
     if(isset($_POST['submit'])){
         $image= $_POST['dbimage'];
@@ -23,6 +25,7 @@
         mysqli_close($link);
     }
     include "dbconnect.php";
+    //query the selected id
     if(isset($_GET['docID'])){
         $edit_id=$_GET['docID'];
         $sql="SELECT * FROM ourdoctor WHERE id=$edit_id";
@@ -86,7 +89,7 @@
                 </a>
                 </div>
             </div>  
-            
+            <!-- Add updated doctor form -->
             <div class="container">
                 <div class="card-body border bg-info shadow rounded">
                     <h1 class="card-title">Add doctor</h1>
@@ -136,12 +139,7 @@
 
        <?php
        
-       }
-       }
-       else{
-
-       }
-       }else{
-
-       }
+       } //finish while
+       }//finish if 
+       }//finish another if
 ?>

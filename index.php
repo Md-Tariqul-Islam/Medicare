@@ -1,7 +1,9 @@
 
 <?php 
-  //  database
+  //  database connection
   include "dbconnect.php";
+
+  //Store appointment table data
   if(isset($_POST['submit'])){
     $name= $_POST['name'];
     $email= $_POST['email'];
@@ -23,7 +25,9 @@
         <?php
     }
   mysqli_close($link);
-}
+  }
+
+//Store contacts table data
 if(isset($_POST['send'])){
   $name= $_POST['name'];
   $phone= $_POST['phone'];
@@ -44,25 +48,18 @@ if(isset($_POST['send'])){
 }
 
 
-
-
-
-  // data select
+  // data select for show Doctors
   include "dbconnect.php";
   $select_sql = "SELECT * FROM ourdoctor";
   $allData=mysqli_query($link,$select_sql);
-  //print_r($allData);
+
   $select_dept="SELECT DISTINCT department FROM ourdoctor";
   $allDept=mysqli_query($link,$select_dept);
-  //print_r($all) ;
 
   $select_doc="SELECT * FROM ourdoctor";
   $allDoc=mysqli_query($link,$select_doc);
 
 ?>
-
-
-
 
 
 <!doctype html>
@@ -183,27 +180,27 @@ if(isset($_POST['send'])){
       </div>
 
     </section>
-    <!-- home end  -->
-<!-- about -->
-<section id="about">
-        <div class="container py-5">
-            <div class="row">
+  
+<!-- About Us-->
+    <section id="about">
+      <div class="container py-5">
+          <div class="row">
 
-                <div class="col-md-6 col-sm-6">
-                    <div class="about-info">
-                        <h2>Welcome to 
-                          <i class="fas fa-plus-square"></i>Medicare</h2>
-                        <div>
-                            <p>We're here when you need us. For everyday care or life-changing care, you can count on us
-                                to keep you and your loved ones safe and healthy.</p>
-                            <p>Our friendly and knowledgeable staff teams provide support throughout our many specialty
-                                departments and centers, from primary visits to emergency care.</p>
-                        </div>
-                    </div>
-                </div>
+              <div class="col-md-6 col-sm-6">
+                  <div class="about-info">
+                      <h2>Welcome to 
+                        <i class="fas fa-plus-square"></i>Medicare</h2>
+                      <div>
+                          <p>We're here when you need us. For everyday care or life-changing care, you can count on us
+                              to keep you and your loved ones safe and healthy.</p>
+                          <p>Our friendly and knowledgeable staff teams provide support throughout our many specialty
+                              departments and centers, from primary visits to emergency care.</p>
+                      </div>
+                  </div>
+              </div>
 
-            </div>
-        </div>
+          </div>
+      </div>
     </section>
 
     <!-- Doctors -->
@@ -220,7 +217,7 @@ if(isset($_POST['send'])){
 
           <div class="col-md-4 col-sm-6 my-3">
             <div class="card shadow">
-              <img src="<?php echo $fetchData['image'];?>" class="card-img-top" alt="this" id="image">
+              <img src="<?php echo $fetchData['image'];?>" class="card-img-top" alt="image" id="image">
               <div class="card-body">
                 <h2><?php echo $fetchData['name'];?></h2>
                 <h6 class="lead"><?php echo $fetchData['department'];?></h6>
@@ -231,7 +228,7 @@ if(isset($_POST['send'])){
           </div>
 
         <?php 
-          }
+          }//while finish
           }else{
         ?>
         <div class="col-lg-12">No Doctor to show</div>
@@ -239,6 +236,7 @@ if(isset($_POST['send'])){
 
       </div>
     </div>
+
 
     <!-- Make an appointment start  -->
 
@@ -311,51 +309,39 @@ if(isset($_POST['send'])){
       </div>
     </div>
     
-    <!-- Contact section start -->
+    <!-- Contact -->
     <div class="container"id="contact">
       <div class="card-body">
         <h2 class="card-title">Contact us</h2>
         <form id="contact-form" method="post" action="">
           <div class="row">
-          <div class="col-md-12 col-sm-12">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-              <label for="phone">Phone Number</label>
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-              <label for="message">Additional Message</label>
-              <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message" required></textarea>
-              <button type="submit" class="form-control" id="cf-submit" name="send">Send
-              </button>    
+            <div class="col-md-12 col-sm-12">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Additional Message</label>
+                <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="form-control" id="cf-submit" name="send">Send
+                </button>    
+            </div>
           </div>
-
-          </div>
-        </form>
-                           
+        </form>                
       </div>
     </div>
 
     <!-- Footer section Start  -->
-    <footer class="footer-section">
-      <div class="container">
+    <div class="container mt-5">
         <div class="row">
-        <div class="col-md-12 col-sm-12 border-top">
-                    <!-- <div class="col-md-4 col-sm-6"> -->
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2021 Our Company
-                                | Design: Akram & Tarik</p>
-                        </div>
-                    <!-- </div> -->
-                    
-                    
-                </div>
-
+            <div class="col-md-12 col-sm-12 border-top">   
+              <div class="copyright-text">
+                  <p>Copyright &copy; 2021 Our Company | Design: Akram & Tariqul</p>
+              </div>
             </div>
         </div>
-      </div>
-    </footer>
-
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>

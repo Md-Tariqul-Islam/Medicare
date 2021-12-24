@@ -1,7 +1,8 @@
 <?php 
     session_start();
-    //echo "Welcome," . $_SESSION['name'];
+    // database connection
     include "dbconnect.php";
+    //query data 
     $select_sql = "SELECT * FROM tblappointment";
     $allData=mysqli_query($link,$select_sql);
 ?>
@@ -52,19 +53,21 @@
             </div>                         
         </aside>
 
+        <!-- Main Containt -->
         <main class="col px-0"> 
-            <div class="d-flex justify-content-between border bg-light">
-                <div class="p-2"><h2 class=""><?php echo "Welcome " . $_SESSION['name'];?></h2></div>
-                <div class="p-2">  
-                <a href="index.php" class="btn btn-info btn-lg">
-                  <span ><i class="fas fa-sign-out-alt"></i> Log out </span> 
-                </a>
-                </div>
-            </div>   
-
-            
-          <div class="container mt-3">
-            <div class="card-body border bg-dark shadow rounded">
+          <!--Welcome admin and logout part -->
+          <div class="d-flex justify-content-between border bg-light">
+              <div class="p-2"><h2 class=""><?php echo "Welcome " . $_SESSION['name'];?></h2></div>
+              <div class="p-2">  
+              <a href="index.php" class="btn btn-info btn-lg">
+                <span ><i class="fas fa-sign-out-alt"></i> Log out </span> 
+              </a>
+              </div>
+          </div>   
+          <!-- Appointment Table -->
+          <div class="container mt-4">
+            <h2 class="card-title border-bottom pb-2">View Appointment</h2>
+            <div class="card-body border bg-dark shadow rounded mt-3">
                   <div class="table-responsive">
                       <table class="table table-dark table-hover">
                           <thead>

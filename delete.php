@@ -11,7 +11,7 @@ if(isset($_GET['docID'])){
       else{
           ?>
           <script>
-              alert("Recorded is not added Successfully");
+              alert("Operation Unsuccessfully");
           </script>
           <?php
       }
