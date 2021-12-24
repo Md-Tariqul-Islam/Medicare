@@ -59,9 +59,9 @@
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white sticky-top">
 
             <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="admin.php">
-                <i class="fas fa-plus-square"></i>
-                <span class="px-2 d-none d-sm-inline">Medicare</span>
-                </a>
+                <i class="fas fa-plus-square" style="color:#f14242;font-size:25px;"></i>
+                <span class="px-2 d-none d-sm-inline" style="font-size:25px;">Medicare</span>
+            </a>
 
             <a href="admin.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <i class="fas fa-comment-alt"></i>
@@ -70,6 +70,10 @@
             <a href="doctor.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <i class="fas fa-users"></i>
                 <span class="px-2 d-none d-sm-inline">Our Doctors</span>
+            </a>
+            <a href="contactInfo.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                   <i class="fas fa-th-list"></i>
+                <span class="px-2 d-none d-sm-inline">Contacts</span>
             </a>
             </div>                         
         </aside>

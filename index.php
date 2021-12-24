@@ -208,7 +208,7 @@ if(isset($_POST['send'])){
       <div class="row">
 
         <div class="col-md-12 col-sm-12">     
-          <h2 class="text-center">Our Doctors</h2>    
+          <h2 class="text-center border-bottom">Our Doctors</h2>    
         </div>
         
         <?php 
@@ -242,7 +242,7 @@ if(isset($_POST['send'])){
 
     <div class="container"id="appointment">
       <div class="card-body">
-        <h2 class="card-title">Make an Appointment</h2>
+        <h2 class="card-title border-bottom">Make an Appointment</h2>
         <form id="appointment-form" method="post" action="">
           <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -312,7 +312,7 @@ if(isset($_POST['send'])){
     <!-- Contact -->
     <div class="container"id="contact">
       <div class="card-body">
-        <h2 class="card-title">Contact us</h2>
+        <h2 class="card-title border-bottom">Contact Us</h2>
         <form id="contact-form" method="post" action="">
           <div class="row">
             <div class="col-md-12 col-sm-12">

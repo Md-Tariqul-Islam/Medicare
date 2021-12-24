@@ -3,7 +3,7 @@
     // database connection
     include "dbconnect.php";
     //query data 
-    $select_sql = "SELECT * FROM tblappointment";
+    $select_sql = "SELECT * FROM contacts";
     $allData=mysqli_query($link,$select_sql);
 ?>
 
@@ -40,7 +40,7 @@
             <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="admin.php">
                 <i class="fas fa-plus-square" style="color:#f14242;font-size:25px;"></i>
                 <span class="px-2 d-none d-sm-inline" style="font-size:25px;">Medicare</span>
-                </a>
+            </a>
 
             <a href="admin.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <i class="fas fa-comment-alt"></i>
@@ -53,7 +53,7 @@
             
             <a href="contactInfo.php" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                    <i class="fas fa-th-list"></i>
-                <span class="px-2 d-none d-sm-inline">Contact Info</span>
+                <span class="px-2 d-none d-sm-inline">Contacts</span>
             </a>
 
             </div>                         
@@ -70,20 +70,17 @@
               </a>
               </div>
           </div>   
-          <!-- Appointment Table -->
+          <!-- Contacts Info Table -->
           <div class="container mt-4">
-            <h2 class="card-title border-bottom pb-2">View Appointment</h2>
+            <h2 class="card-title border-bottom pb-2">View Contacts Infomation</h2>
             <div class="card-body border bg-dark shadow rounded mt-3">
                   <div class="table-responsive">
                       <table class="table table-dark table-hover">
                           <thead>
                               <tr>
                                   <th>Name</th>
-                                  <th>Email</th>
-                                  <th>App. Date</th>
-                                  <th>Department</th>
-                                  <th>Doctor</th>
                                   <th>Phone</th>
+                                  <th>Email</th>
                                   <th>Massage</th>
                                   <th>Action</th>
                               </tr>
@@ -96,13 +93,10 @@
                               <tr>
                                   <td><?php echo $fetchData['name'];?></td>
                                   <td><?php echo $fetchData['email'];?></td>
-                                  <td><?php echo $fetchData['appDate'];?></td>
-                                  <td><?php echo $fetchData['department'];?></td>
-                                  <td><?php echo $fetchData['cdoctor'];?></td>
                                   <td><?php echo $fetchData['phone'];?></td>
-                                  <td><?php echo $fetchData['appMessage'];?></td>
-                                  <td style="text-align:center;">
-                                      <a href="#"><i class="fas fa-envelope" style="color:blue;"></i></a>
+                                  <td><?php echo $fetchData['message'];?></td>
+                                  <td>
+                                      <a href="#"><i class="fas fa-envelope ps-3" style="color:blue;"></i></a>
                                   </td>
                               </tr>
                               <?php }?>
